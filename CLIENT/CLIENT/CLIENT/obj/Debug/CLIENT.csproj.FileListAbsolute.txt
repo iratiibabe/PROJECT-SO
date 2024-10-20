@@ -48,13 +48,113 @@ C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\PROVA SO\CLIENT\CLIENT\CLI
 C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\PROVA SO\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
 C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\PROVA SO\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
 C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\PROVA SO\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
-C:\SO\PROYECTO SO - V1\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
-C:\SO\PROYECTO SO - V1\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe
-C:\SO\PROYECTO SO - V1\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
-C:\SO\PROYECTO SO - V1\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.AssemblyReference.cache
-C:\SO\PROYECTO SO - V1\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
-C:\SO\PROYECTO SO - V1\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
-C:\SO\PROYECTO SO - V1\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
-C:\SO\PROYECTO SO - V1\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
-C:\SO\PROYECTO SO - V1\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
-C:\SO\PROYECTO SO - V1\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
+C:\Users\aloma\Downloads\PROVA SO\PROVA SO\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+C:\Users\aloma\Downloads\PROVA SO\PROVA SO\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+C:\Users\aloma\Downloads\PROVA SO\PROVA SO\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+C:\Users\aloma\Downloads\PROVA SO\PROVA SO\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.AssemblyReference.cache
+C:\Users\aloma\Downloads\PROVA SO\PROVA SO\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+C:\Users\aloma\Downloads\PROVA SO\PROVA SO\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+C:\Users\aloma\Downloads\PROVA SO\PROVA SO\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+C:\Users\aloma\Downloads\PROVA SO\PROVA SO\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+C:\Users\aloma\Downloads\PROVA SO\PROVA SO\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+C:\Users\aloma\Downloads\PROVA SO\PROVA SO\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.AssemblyReference.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v1\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v1\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v1\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v1\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.AssemblyReference.cache
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v1\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v1\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v1\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v1\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v1\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v1\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
+C:\SO\v1.1\v1.1\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+C:\SO\v1.1\v1.1\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+C:\SO\v1.1\v1.1\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+C:\SO\v1.1\v1.1\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.AssemblyReference.cache
+C:\SO\v1.1\v1.1\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+C:\SO\v1.1\v1.1\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+C:\SO\v1.1\v1.1\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+C:\SO\v1.1\v1.1\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+C:\SO\v1.1\v1.1\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+C:\SO\v1.1\v1.1\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
+C:\SO\PROYECTO\v2\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+C:\SO\PROYECTO\v2\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+C:\SO\PROYECTO\v2\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+C:\SO\PROYECTO\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.AssemblyReference.cache
+C:\SO\PROYECTO\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+C:\SO\PROYECTO\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+C:\SO\PROYECTO\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+C:\SO\PROYECTO\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+C:\SO\PROYECTO\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+C:\SO\PROYECTO\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
+C:\SO\v2\v2\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+C:\SO\v2\v2\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+C:\SO\v2\v2\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+C:\SO\v2\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.AssemblyReference.cache
+C:\SO\v2\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+C:\SO\v2\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+C:\SO\v2\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+C:\SO\v2\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+C:\SO\v2\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+C:\SO\v2\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v2\v2\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v2\v2\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v2\v2\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v2\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.AssemblyReference.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v2\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v2\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v2\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v2\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v2\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v2\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.AssemblyReference.cache
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
+C:\SO\PROYECTO\v2.2zip\v2\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+C:\SO\PROYECTO\v2.2zip\v2\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+C:\SO\PROYECTO\v2.2zip\v2\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+C:\SO\PROYECTO\v2.2zip\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.AssemblyReference.cache
+C:\SO\PROYECTO\v2.2zip\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+C:\SO\PROYECTO\v2.2zip\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+C:\SO\PROYECTO\v2.2zip\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+C:\SO\PROYECTO\v2.2zip\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+C:\SO\PROYECTO\v2.2zip\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+C:\SO\PROYECTO\v2.2zip\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2.2\v2\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2.2\v2\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2.2\v2\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2.2\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.AssemblyReference.cache
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2.2\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2.2\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2.2\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2.2\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2.2\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2.2\v2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2.2\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2.2\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2.2\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2.2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.AssemblyReference.cache
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2.2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2.2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2.2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2.2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2.2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v2.2\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb

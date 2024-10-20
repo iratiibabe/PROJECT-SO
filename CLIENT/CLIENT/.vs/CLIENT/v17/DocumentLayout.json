@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\SO\\PROYECTO SO - V1\\CLIENT\\CLIENT\\",
+  "WorkspaceRootPath": "C:\\SO\\PROVA SO\\CLIENT\\CLIENT\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{81455061-BAC3-4E1A-93FB-21490F88768C}|CLIENT\\CLIENT.csproj|c:\\so\\proyecto so - v1\\client\\client\\client\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{81455061-BAC3-4E1A-93FB-21490F88768C}|CLIENT\\CLIENT.csproj|C:\\SO\\PROVA SO\\CLIENT\\CLIENT\\client\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{81455061-BAC3-4E1A-93FB-21490F88768C}|CLIENT\\CLIENT.csproj|solutionrelative:client\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{81455061-BAC3-4E1A-93FB-21490F88768C}|CLIENT\\CLIENT.csproj|C:\\SO\\PROYECTO SO - V1\\CLIENT\\CLIENT\\client\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{81455061-BAC3-4E1A-93FB-21490F88768C}|CLIENT\\CLIENT.csproj|C:\\SO\\PROVA SO\\CLIENT\\CLIENT\\client\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{81455061-BAC3-4E1A-93FB-21490F88768C}|CLIENT\\CLIENT.csproj|solutionrelative:client\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{81455061-BAC3-4E1A-93FB-21490F88768C}|CLIENT\\CLIENT.csproj|C:\\SO\\PROYECTO SO - V1\\CLIENT\\CLIENT\\client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{81455061-BAC3-4E1A-93FB-21490F88768C}|CLIENT\\CLIENT.csproj|C:\\SO\\PROVA SO\\CLIENT\\CLIENT\\client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{81455061-BAC3-4E1A-93FB-21490F88768C}|CLIENT\\CLIENT.csproj|solutionrelative:client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -31,24 +31,24 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\SO\\PROYECTO SO - V1\\CLIENT\\CLIENT\\CLIENT\\Form1.cs",
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\SO\\PROVA SO\\CLIENT\\CLIENT\\CLIENT\\Form1.cs",
               "RelativeDocumentMoniker": "CLIENT\\Form1.cs",
-              "ToolTip": "C:\\SO\\PROYECTO SO - V1\\CLIENT\\CLIENT\\CLIENT\\Form1.cs [Design]",
-              "RelativeToolTip": "CLIENT\\Form1.cs [Design]",
+              "ToolTip": "C:\\SO\\PROVA SO\\CLIENT\\CLIENT\\CLIENT\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "CLIENT\\Form1.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-05T06:54:28.188Z",
-              "EditorCaption": " [Design]"
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\SO\\PROYECTO SO - V1\\CLIENT\\CLIENT\\CLIENT\\Form1.cs",
+              "DocumentMoniker": "C:\\SO\\PROVA SO\\CLIENT\\CLIENT\\CLIENT\\Form1.cs",
               "RelativeDocumentMoniker": "CLIENT\\Form1.cs",
-              "ToolTip": "C:\\SO\\PROYECTO SO - V1\\CLIENT\\CLIENT\\CLIENT\\Form1.cs",
+              "ToolTip": "C:\\SO\\PROVA SO\\CLIENT\\CLIENT\\CLIENT\\Form1.cs",
               "RelativeToolTip": "CLIENT\\Form1.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAcwHoAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAMwAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-05T06:54:27.876Z",
               "EditorCaption": ""
@@ -57,9 +57,9 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\SO\\PROYECTO SO - V1\\CLIENT\\CLIENT\\CLIENT\\Program.cs",
+              "DocumentMoniker": "C:\\SO\\PROVA SO\\CLIENT\\CLIENT\\CLIENT\\Program.cs",
               "RelativeDocumentMoniker": "CLIENT\\Program.cs",
-              "ToolTip": "C:\\SO\\PROYECTO SO - V1\\CLIENT\\CLIENT\\CLIENT\\Program.cs",
+              "ToolTip": "C:\\SO\\PROVA SO\\CLIENT\\CLIENT\\CLIENT\\Program.cs",
               "RelativeToolTip": "CLIENT\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
