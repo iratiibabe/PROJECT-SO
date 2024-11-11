@@ -8,7 +8,7 @@
 #include <mysql.h>
 #include <pthread.h> //para manejar los threads
 
-#define PORT 9000 // port from which we will listen
+#define PORT 50067 // port from which we will listen
 #define MAX_CLIENTS 20 // maximum nuber of pending petitions
 
 struct thread_data {
@@ -38,8 +38,9 @@ void query3(char* username, char* response, MYSQL* conn);
 void query4(int numero, char* response, MYSQL* conn);
 void register_user(char* username, char* password, char* response, MYSQL* conn);
 void login_user(char* username, char* password, char* response, MYSQL* conn);
-
-
+void create_game(char* username, char* response, MYSQL* conn);
+void select_cells(char* username,char* response,float position,MYSQL* conn); 
+void select_bomb_cells(char* username, char* response, float position_bomb, MYSQL* conn);
 
 //FUNCTION TO ADD PLAYER TO THE CONNECTED LIST
 void add_player(char* username) {
@@ -173,14 +174,19 @@ void process_request(char* request, char* response, MYSQL* conn, char* username,
 		case 8: 
 			p = strtok(NULL, "/");
 			if (p == NULL) {
-				strcpy(response, "Invalid format for selected cells\n");
+				strcpy(response, "8/Invalid format for selected cells\n");
 			return;
 			}
-			select_cells(p, response);
+			strcpy(username,p);
+			p = strtok(NULL, "/");
+			while (p!=NULL){
+				float position = atof(p);
+				select_cells(username, response, position, conn);
+				p = strtok(NULL, "/");
+			}
 			break;
 			
 		case 9:
-			
 			p = strtok(NULL, "/");
 			if (p == NULL) {
 				strcpy(response, "Invalid request format for login\n");
@@ -193,15 +199,31 @@ void process_request(char* request, char* response, MYSQL* conn, char* username,
 				return;
 			}
 			strcpy(chat_message, p);
-			
-			
 			broadcast_message_chat(chat_message,username,response, sender_sock);
-			
 			break;
 			
+		case 10:
+			p = strtok(NULL, "/");
+			if (p == NULL) {
+				strcpy(response, "Invalid request format for login\n");
+				return;
+			}
+			strcpy(username, p);		
+			create_game(username,response,conn);
+			break;
 			
-			
-      
+		case 11: 
+			p = strtok(NULL, "/");
+			if (p == NULL) {
+				strcpy(response, "11/Invalid format for selected cells\n");
+				return;
+			}
+			strcpy(username,p);
+			p = strtok(NULL, "/");
+			float position_bomb = atof(p);
+			select_bomb_cells(username, response, position_bomb, conn);
+			break;
+		
 		case 0:
 			p = strtok(NULL, "/");
 			if (p != NULL) {
@@ -385,31 +407,183 @@ void login_user(char* username, char* password, char* response, MYSQL* conn) {
     mysql_free_result(resultado);
 }
 
-
 //SELECT CELLS
-void select_cells(char* cells, char* response) {
-
-	printf("Received selected cells: %s\n", cells);
-	sprintf(response, "8/Selected cells: %s\n", cells);	
+void select_cells(char* username, char* response, float position,MYSQL* conn) {
+	char query[512];
+	MYSQL_RES* resultado;
+	MYSQL_ROW row;
+	char ID_Player[20];
+	
+	snprintf(query, sizeof(query),
+			 "SELECT ID FROM PLAYERS WHERE USERNAME = '%s';", username);
+	if (mysql_query(conn, query) != 0) {
+		snprintf(response, 512, "10/Error verifying user: %u %s\n", mysql_errno(conn), mysql_error(conn));
+		return;
+	}
+	resultado = mysql_store_result(conn);
+	if (resultado == NULL) {
+		snprintf(response, 512, "10/Error storing result: %u %s\n",
+				 mysql_errno(conn), mysql_error(conn));
+		return;
+	}
+	row = mysql_fetch_row(resultado);
+	if (row != NULL) {
+		strcpy(ID_Player, row[0]); 
+	} else {
+		snprintf(response, 512, "10/Error: User not found\n");
+		mysql_free_result(resultado);
+		return;
+	}
+	mysql_free_result(resultado);	
+	//insert position to the tamble
+	snprintf(query, sizeof(query), "INSERT INTO POSITIONS (ID_PLAYER, POSITION_ROCKET) VALUES (%s, %f);", ID_Player, position);
+	if (mysql_query(conn, query) == 0) {
+		printf("Inserted correctly\n");
+		sprintf(response, "10/Inserted correctly");
+	} else {
+		snprintf(response, 512, "10/Error entering the coordinates: %u %s\n",
+				 mysql_errno(conn), mysql_error(conn));
+	}
 }
 
+//SELECT BOMB CELLS
+void select_bomb_cells(char* username, char* response, float position_bomb, MYSQL* conn){
+	MYSQL_RES* resultado;
+	MYSQL_ROW row;
+	char ID_Player[20];
+	char query[512];
+	
+	// Obtener el ID del jugador (quien envió la bomba)
+	snprintf(query, sizeof(query),
+			 "SELECT ID FROM PLAYERS WHERE USERNAME = '%s';", username);
+	if (mysql_query(conn, query) != 0) {
+		snprintf(response, 512, "11/Error verifying user: %u %s\n",
+				 mysql_errno(conn), mysql_error(conn));
+		return;
+	}
+	resultado = mysql_store_result(conn);
+	if (resultado == NULL) {
+		snprintf(response, 512, "11/Error storing result: %u %s\n",
+				 mysql_errno(conn), mysql_error(conn));
+		return;
+	}
+	row = mysql_fetch_row(resultado);
+	if (row != NULL) {
+		strcpy(ID_Player, row[0]); 
+	} else {
+		snprintf(response, 512, "11/Error: User not found\n");
+		mysql_free_result(resultado);
+		return;
+	}
+	mysql_free_result(resultado);
+	
+	snprintf(query, sizeof(query),
+			 "SELECT POSITION_ROCKET FROM POSITIONS WHERE ID_PLAYER != %s;", ID_Player);
+	if (mysql_query(conn, query) != 0) {
+		snprintf(response, 512, "11/Error querying other players' positions: %u %s\n",
+				 mysql_errno(conn), mysql_error(conn));
+		return;
+	}
+	
+	resultado = mysql_store_result(conn);
+	if (resultado == NULL) {
+		snprintf(response, 512, "11/Error storing result: %u %s\n",
+				 mysql_errno(conn), mysql_error(conn));
+		return;
+	}
+	
+	
+	int rocket_found = 0;  
+	while ((row = mysql_fetch_row(resultado)) != NULL) {
+		float position_rocket = atof(row[0]);  
+		if (position_rocket == position_bomb) { 
+			rocket_found = 1;
+			break;
+		}
+	}
+	
+	if (rocket_found) {
+		snprintf(response, 512, "11/There is a rocket in this position/%f",position_bomb);
+	} else {
+		snprintf(response, 512, "11/No rocket found in this position/%f",position_bomb);
+	}
+	
+	mysql_free_result(resultado);
+}
 //FUNCION PARA QUE EL MENSAJE SE ENVIE A TODOS LOC CLIENTES
 void broadcast_message_chat(char* chat_message, char* username, char* response,int sender_sock) {
-	
-	
 	pthread_mutex_lock(&mutex); // Bloqueo para evitar problemas de concurrencia
 	sprintf(response, "9/%s:%s\n",username,chat_message); 
 	for (int j= 0;j<client_count; j++) {
 		
 		if (sockets[j] != NULL){
 			if (sockets[j]->sock_conn != sender_sock) 
-		
 				write(sockets[j]->sock_conn, response, strlen(response)); // Enviar el mensaje a cada cliente
-		
 		}
 	}
-	
 	pthread_mutex_unlock(&mutex); // Desbloqueo
+}
+
+void create_game(char* username, char* response, MYSQL* conn) {
+	MYSQL_RES* resultado;
+	MYSQL_ROW row;
+	char query[512];
+	char datetime[20];
+	char ID_Player[20];
+	unsigned long long ID_Match;
+	time_t t = time(NULL);
+	struct tm *tm_info = localtime(&t);
+	
+	strftime(datetime, sizeof(datetime), "%Y-%m-%d %H:%M:%S", tm_info);
+	
+	
+	// Inserta un nuevo registro en la tabla MATCHES
+	snprintf(query, sizeof(query),
+			 "INSERT INTO MATCHES (DATE_TIME_FINISH, DURATION, WINNER) VALUES ('%s', 0, NULL);",datetime);
+	if (mysql_query(conn, query) == 0) {
+		// Obtain the ID
+		my_ulonglong inserted_id = mysql_insert_id(conn);
+		ID_Match= inserted_id;
+		snprintf(response, 512, "10/You are now registered successfully. Your Match ID is: %llu\n", ID_Match);
+	} else {
+		snprintf(response, 512, "10/Error registering: %u %s\n",
+				 mysql_errno(conn), mysql_error(conn));
+	}
+	snprintf(query, sizeof(query),
+			 "SELECT ID FROM PLAYERS WHERE USERNAME = '%s';", username);
+	if (mysql_query(conn, query) != 0) {
+		snprintf(response, 512, "10/Error verifying user: %u %s\n",
+				 mysql_errno(conn), mysql_error(conn));
+		return;
+	}
+	
+	// Obtener y verificar el resultado
+	resultado = mysql_store_result(conn);
+	if (resultado == NULL) {
+		snprintf(response, 512, "10/Error storing result: %u %s\n",
+				 mysql_errno(conn), mysql_error(conn));
+		return;
+	}
+	
+	row = mysql_fetch_row(resultado);
+	if (row != NULL) {
+		strcpy(ID_Player, row[0]); 
+	} else {
+		snprintf(response, 512, "10/Error: User not found\n");
+		mysql_free_result(resultado);
+		return;
+	}
+	mysql_free_result(resultado);
+	
+	
+	snprintf(query, sizeof(query),
+			 "INSERT INTO PARTICIPATION (ID_PLAYER, ID_MATCH) VALUES ('%s', '%llu');", ID_Player, ID_Match);
+	if (mysql_query(conn, query) == 0) {
+		printf("Inserted correctly\n");
+	} else {
+		snprintf(response, 512, "10/Error registering: %u %s\n",
+				 mysql_errno(conn), mysql_error(conn));
+	}
 }
 
 // FUNCTION TO INITIALIZE THE CONNECTION WITH MYSQL
@@ -419,14 +593,15 @@ MYSQL* init_mysql_connection() {
 		printf("Error creating the connection with MySQL: %u %s\n", mysql_errno(conn), mysql_error(conn));
 		exit(1);
 	}
-	conn = mysql_real_connect(conn, "localhost", "root", "mysql", "EXPLODINGROCKETS", 0, NULL, 0);
+	conn = mysql_real_connect(conn,"shiva2.upc.es", "root", "mysql", "T4_EXPLODINGROCKETS", 0, NULL, 0);
 	if (conn == NULL) {
 		printf("Error initializing the connection with MySQL: %u %s\n", mysql_errno(conn), mysql_error(conn));
 		exit(1);
 	}
 	return conn;
 }
-
+	
+	
 // MAIN
 int main() {
 	int sock_listen, sock_conn;
@@ -491,6 +666,6 @@ int main() {
 	
 	mysql_close(conn);
 	return 0;
-}
+ }
 
 
