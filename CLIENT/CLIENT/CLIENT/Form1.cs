@@ -17,18 +17,19 @@ namespace CLIENT
 {
 	public partial class Form1 : Form
 	{
-		Socket server;
+        Socket server;
 		Thread attend;
-		public Form1()
+        public Form1()
 		{
 			InitializeComponent();
 			CheckForIllegalCrossThreadCalls = false;
             this.Load += new System.EventHandler(this.Form1_Load);
             dataGridView1.CellPainting += dataGridView1_CellPainting;
 			dataGridView2.CellPainting += dataGridView2_CellPainting;
-            this.BackgroundImage = Image.FromFile("..\\..\\images\\fondo1.jpg");
-            this.BackgroundImageLayout = ImageLayout.Stretch;
-        }
+			this.BackgroundImage = Image.FromFile("..\\..\\images\\tierra.jpg");
+			this.BackgroundImageLayout = ImageLayout.Stretch;
+
+		}
 
         private void Form1_Load(object sender, EventArgs e)
 		{
@@ -44,7 +45,7 @@ namespace CLIENT
 				server.Receive(msg2);
 				string [] pieces = Encoding.ASCII.GetString(msg2).Split('/');
 				int code =Convert.ToInt32(pieces[0]); 
-				string query;
+				
 				string respuesta;
 				switch (code)
 				{
@@ -58,7 +59,7 @@ namespace CLIENT
 						break;
 					case 7: //LISTA PLAYERS
 						respuesta = pieces[1].Split('\0')[0];
-						MessageBox.Show(respuesta);
+						Connectedlbl.Text = respuesta;
 						break;
 					case 8: // CELDAS
 						respuesta = pieces[1].Split('\0')[0];
@@ -71,13 +72,12 @@ namespace CLIENT
 						break;
 					case 10:
 						respuesta = pieces[1].Split('\0')[0];
-						MessageBox.Show(respuesta);
-						ID_match++;
+                        MessageBox.Show(respuesta);
+                        string[] GetID = pieces[1].Split(':');
+                        currentMatchID = Convert.ToInt32(GetID[1]);
 						break;
 					case 11:
 						respuesta = pieces[1];
-
-						
 						string[] positionParts = pieces[2].Split('.'); 
 
 						if (positionParts.Length == 2) // Asegurarse de que tenemos ambas partes
@@ -91,33 +91,51 @@ namespace CLIENT
 							pintar(respuesta, positionX, positionY);
 						}
 						break;
-				}
+                    case 12: //INVITACIÓN
+                        //respuesta = pieces[1].Split('\0')[0];
+                        //MessageBox.Show(respuesta);
+
+						respuesta = pieces[1];
+                        invitacionForm invitacionForm = new invitacionForm(respuesta);
+                        DialogResult result = invitacionForm.ShowDialog();
+                        string username = usernamebox.Text;
+
+						string[] parts = pieces[1].Split(':');
+                        string sender_username = parts[1];
+                        string receiver = sender_username;
+
+                        RespondToInvitation(result,username,receiver);
+                        break;
+
+                    case 13: //RESPUESTA A LA INVITACIÓN
+                        respuesta = pieces[1].Split('\0')[0];
+                        MessageBox.Show(respuesta);
+                        break;
+                }
 			}
 		}
 
-
-		void pintar(string respuesta, int positionX, int positionY)
+        void pintar(string respuesta, int positionX, int positionY)
 		{
 			int targetColumn = positionY;
 			int targetRow = positionX;
 
-			MessageBox.Show($"Columna: {targetColumn}\nFila: {targetRow}");
+			
 
 			if (respuesta == "There is a rocket in this position")
 			{
 				string imagePath = "..\\..\\images\\fuego.png";
 				Image fireImage = Image.FromFile(imagePath);
 
-				// Escalar la imagen para que se ajuste al tamaño de la celda
+				
 				Image scaledImage = new Bitmap(fireImage, dataGridView2.Columns[targetColumn].Width, dataGridView2.Rows[targetRow].Height);
 
-				// Asegurar que la celda es del tipo DataGridViewImageCell
 				if (!(dataGridView2.Rows[targetRow].Cells[targetColumn] is DataGridViewImageCell))
 				{
 					dataGridView2.Rows[targetRow].Cells[targetColumn] = new DataGridViewImageCell();
 				}
 
-				// Asignar la imagen escalada
+			
 				dataGridView2.Rows[targetRow].Cells[targetColumn].Value = scaledImage;
 				dataGridView2.Rows[targetRow].Cells[targetColumn].Style.BackColor = Color.White;
 				dataGridView2.InvalidateCell(dataGridView2.Rows[targetRow].Cells[targetColumn]);
@@ -129,16 +147,16 @@ namespace CLIENT
 				string imagePath = "..\\..\\images\\bomba.png";
 				Image bombImage = Image.FromFile(imagePath);
 
-				// Escalar la imagen para que se ajuste al tamaño de la celda
+				
 				Image scaledImage = new Bitmap(bombImage, dataGridView2.Columns[targetColumn].Width, dataGridView2.Rows[targetRow].Height);
 
-				// Asegurar que la celda es del tipo DataGridViewImageCell
+				
 				if (!(dataGridView2.Rows[targetRow].Cells[targetColumn] is DataGridViewImageCell))
 				{
 					dataGridView2.Rows[targetRow].Cells[targetColumn] = new DataGridViewImageCell();
 				}
 
-				// Asignar la imagen escalada
+				
 				dataGridView2.Rows[targetRow].Cells[targetColumn].Value = scaledImage;
 				dataGridView2.Rows[targetRow].Cells[targetColumn].Style.BackColor = Color.White;
 				dataGridView2.InvalidateCell(dataGridView2.Rows[targetRow].Cells[targetColumn]);
@@ -154,9 +172,9 @@ namespace CLIENT
 
 		private void connectbtn_Click(object sender, EventArgs e)
 		{
-            IPAddress direc = IPAddress.Parse("10.4.119.5");
-            IPEndPoint ipep = new IPEndPoint(direc, 50067);
-            server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+			IPAddress direc = IPAddress.Parse("192.168.56.101");
+			IPEndPoint ipep = new IPEndPoint(direc, 9200);
+			server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 			try
 			{
 				server.Connect(ipep);
@@ -173,6 +191,7 @@ namespace CLIENT
 			ThreadStart ts = delegate { ServerServe(); };
 			attend = new Thread(ts);
 			attend.Start();
+			
 		}
 
 		private void disconnectbtn_Click(object sender, EventArgs e)
@@ -181,11 +200,12 @@ namespace CLIENT
 			byte[] msg = System.Text.Encoding.ASCII.GetBytes(query);
 			server.Send(msg);
 
-			attend.Abort();
+			
             disconnectbtn.BackColor = Color.Red;
             connectbtn.BackColor = Color.LightGray;
             server.Shutdown(SocketShutdown.Both);
 			server.Close();
+			attend.Abort();
 		}
 
 		private void RegisterButton_Click(object sender, EventArgs e)
@@ -451,9 +471,10 @@ namespace CLIENT
 			
 		}
 
-		private static int ID_match = 1; 
+		private static int ID_match = 1;
+        private int currentMatchID = -1;
 
-		private void CreateGame_Click(object sender, EventArgs e)
+        private void CreateGame_Click(object sender, EventArgs e)
 		{
 			if (server == null || !server.Connected)
 			{
@@ -468,7 +489,76 @@ namespace CLIENT
 			string query = "10/" + usernamebox.Text + "/" + ID_match;
 			byte[] msg = System.Text.Encoding.ASCII.GetBytes(query);
 			server.Send(msg);
-			
+        }
+
+		private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e) //VER QUIEN ESTA CONECTADO
+		{
+			string query = "7/";
+			byte[] msg = System.Text.Encoding.ASCII.GetBytes(query);
+			server.Send(msg);
 		}
+
+        private void InvitePlayer_Click(object sender, EventArgs e)
+        {
+
+            string password = passwordbox.Text;
+            string username = usernamebox.Text;
+            string receiver = PlayerName.Text;
+            if (server == null || !server.Connected)
+            {
+                MessageBox.Show("Connect to server first, please");
+                return;
+            }
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Complete all fields, please");
+                return;
+            }
+            if (string.IsNullOrEmpty(receiver))
+            {
+                MessageBox.Show("Write the name of the user you want to invite, please.");
+                return;
+            }
+
+            // Petition: 12/sender_username/receiver_username/IDmatch
+            string query = "12/" + username + "/" + receiver + "/" + currentMatchID;
+            byte[] msg = System.Text.Encoding.ASCII.GetBytes(query);
+            server.Send(msg);
+        }
+
+        private void RespondToInvitation(DialogResult result, string username, string receiver)
+		{
+			int responseCode = 0;
+            if (string.IsNullOrEmpty(receiver))
+            {
+                MessageBox.Show("Receiver name is missing.");
+                return;
+            }
+
+            if (result == DialogResult.Yes) // Ha aceptado jugar
+			{
+				//MessageBox.Show("Player:" + invitation_receiver + "has accepted your invitation.");
+				responseCode = 0;
+			}
+			else if (result == DialogResult.No) // NO ha aceptado jugar
+			{
+				//MessageBox.Show("Player:" + invitation_receiver + "has rejected your invitation.");
+				responseCode = 1;
+			}
+            
+			// Petición: 13/sender_username/reciver_username/responseCode
+			string query = "13/" + username + "/" + receiver + "/" + responseCode;
+            byte[] msg = System.Text.Encoding.ASCII.GetBytes(query);
+            server.Send(msg);
+        }
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

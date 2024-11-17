@@ -28,6 +28,8 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.connectbtn = new System.Windows.Forms.Button();
             this.disconnectbtn = new System.Windows.Forms.Button();
             this.RegisterButton = new System.Windows.Forms.Button();
@@ -36,7 +38,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.passwordbox = new System.Windows.Forms.TextBox();
-            this.LIST_PLAYERS = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bttn_CeldasSeleccionadas = new System.Windows.Forms.Button();
             this.ChatBox = new System.Windows.Forms.ListBox();
@@ -44,9 +45,11 @@
             this.sendMessage = new System.Windows.Forms.Button();
             this.CreateGame = new System.Windows.Forms.Button();
             this.InvitePlayer = new System.Windows.Forms.Button();
-            this.PlayerName = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.Connectedlbl = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.PlayerName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +57,7 @@
             // connectbtn
             // 
             this.connectbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.connectbtn.Location = new System.Drawing.Point(37, 31);
+            this.connectbtn.Location = new System.Drawing.Point(43, 61);
             this.connectbtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.connectbtn.Name = "connectbtn";
             this.connectbtn.Size = new System.Drawing.Size(380, 86);
@@ -66,7 +69,7 @@
             // disconnectbtn
             // 
             this.disconnectbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.disconnectbtn.Location = new System.Drawing.Point(37, 128);
+            this.disconnectbtn.Location = new System.Drawing.Point(43, 160);
             this.disconnectbtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.disconnectbtn.Name = "disconnectbtn";
             this.disconnectbtn.Size = new System.Drawing.Size(380, 86);
@@ -78,7 +81,7 @@
             // RegisterButton
             // 
             this.RegisterButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.RegisterButton.Location = new System.Drawing.Point(869, 131);
+            this.RegisterButton.Location = new System.Drawing.Point(875, 161);
             this.RegisterButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.RegisterButton.Name = "RegisterButton";
             this.RegisterButton.Size = new System.Drawing.Size(196, 58);
@@ -90,7 +93,7 @@
             // LoginButton
             // 
             this.LoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.LoginButton.Location = new System.Drawing.Point(869, 60);
+            this.LoginButton.Location = new System.Drawing.Point(875, 90);
             this.LoginButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(196, 58);
@@ -101,17 +104,19 @@
             // 
             // usernamebox
             // 
-            this.usernamebox.Location = new System.Drawing.Point(608, 60);
+            this.usernamebox.Location = new System.Drawing.Point(613, 90);
             this.usernamebox.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.usernamebox.Name = "usernamebox";
-            this.usernamebox.Size = new System.Drawing.Size(193, 31);
+            this.usernamebox.Size = new System.Drawing.Size(192, 31);
             this.usernamebox.TabIndex = 17;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(611, 6);
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(619, 36);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(159, 31);
@@ -121,8 +126,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(611, 102);
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(619, 132);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(156, 31);
@@ -131,30 +138,27 @@
             // 
             // passwordbox
             // 
-            this.passwordbox.Location = new System.Drawing.Point(608, 156);
+            this.passwordbox.Location = new System.Drawing.Point(613, 186);
             this.passwordbox.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.passwordbox.Name = "passwordbox";
-            this.passwordbox.Size = new System.Drawing.Size(193, 31);
+            this.passwordbox.Size = new System.Drawing.Size(192, 31);
             this.passwordbox.TabIndex = 19;
-            // 
-            // LIST_PLAYERS
-            // 
-            this.LIST_PLAYERS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.LIST_PLAYERS.Location = new System.Drawing.Point(949, 1335);
-            this.LIST_PLAYERS.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.LIST_PLAYERS.Name = "LIST_PLAYERS";
-            this.LIST_PLAYERS.Size = new System.Drawing.Size(381, 58);
-            this.LIST_PLAYERS.TabIndex = 21;
-            this.LIST_PLAYERS.Text = "LIST  OF  CONNECTED  PLAYERS";
-            this.LIST_PLAYERS.UseVisualStyleBackColor = true;
-            this.LIST_PLAYERS.Click += new System.EventHandler(this.LIST_PLAYERS_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 329);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.Location = new System.Drawing.Point(36, 329);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 82;
@@ -166,9 +170,9 @@
             // 
             this.bttn_CeldasSeleccionadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.bttn_CeldasSeleccionadas.Location = new System.Drawing.Point(308, 954);
-            this.bttn_CeldasSeleccionadas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bttn_CeldasSeleccionadas.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.bttn_CeldasSeleccionadas.Name = "bttn_CeldasSeleccionadas";
-            this.bttn_CeldasSeleccionadas.Size = new System.Drawing.Size(224, 51);
+            this.bttn_CeldasSeleccionadas.Size = new System.Drawing.Size(224, 52);
             this.bttn_CeldasSeleccionadas.TabIndex = 23;
             this.bttn_CeldasSeleccionadas.Text = "SEND  SELECTION";
             this.bttn_CeldasSeleccionadas.UseVisualStyleBackColor = true;
@@ -179,29 +183,29 @@
             this.ChatBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.ChatBox.FormattingEnabled = true;
             this.ChatBox.ItemHeight = 25;
-            this.ChatBox.Location = new System.Drawing.Point(37, 1071);
+            this.ChatBox.Location = new System.Drawing.Point(36, 1071);
             this.ChatBox.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ChatBox.Name = "ChatBox";
-            this.ChatBox.Size = new System.Drawing.Size(764, 204);
+            this.ChatBox.Size = new System.Drawing.Size(764, 179);
             this.ChatBox.TabIndex = 25;
             // 
             // MessageChatBox
             // 
             this.MessageChatBox.BackColor = System.Drawing.Color.Azure;
             this.MessageChatBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.MessageChatBox.Location = new System.Drawing.Point(37, 1340);
+            this.MessageChatBox.Location = new System.Drawing.Point(36, 1340);
             this.MessageChatBox.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.MessageChatBox.Name = "MessageChatBox";
-            this.MessageChatBox.Size = new System.Drawing.Size(495, 32);
+            this.MessageChatBox.Size = new System.Drawing.Size(496, 32);
             this.MessageChatBox.TabIndex = 0;
             // 
             // sendMessage
             // 
             this.sendMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.sendMessage.Location = new System.Drawing.Point(571, 1331);
+            this.sendMessage.Location = new System.Drawing.Point(572, 1331);
             this.sendMessage.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.sendMessage.Name = "sendMessage";
-            this.sendMessage.Size = new System.Drawing.Size(195, 61);
+            this.sendMessage.Size = new System.Drawing.Size(196, 61);
             this.sendMessage.TabIndex = 1;
             this.sendMessage.Text = "SEND";
             this.sendMessage.UseVisualStyleBackColor = true;
@@ -210,7 +214,7 @@
             // CreateGame
             // 
             this.CreateGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateGame.Location = new System.Drawing.Point(1285, 31);
+            this.CreateGame.Location = new System.Drawing.Point(1291, 61);
             this.CreateGame.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.CreateGame.Name = "CreateGame";
             this.CreateGame.Size = new System.Drawing.Size(380, 86);
@@ -221,29 +225,33 @@
             // 
             // InvitePlayer
             // 
+            this.InvitePlayer.BackColor = System.Drawing.Color.Transparent;
+            this.InvitePlayer.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.InvitePlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InvitePlayer.Location = new System.Drawing.Point(1933, 31);
+            this.InvitePlayer.Location = new System.Drawing.Point(1939, 61);
             this.InvitePlayer.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.InvitePlayer.Name = "InvitePlayer";
             this.InvitePlayer.Size = new System.Drawing.Size(380, 86);
             this.InvitePlayer.TabIndex = 27;
             this.InvitePlayer.Text = "INVITE PLAYER";
-            this.InvitePlayer.UseVisualStyleBackColor = true;
-            // 
-            // PlayerName
-            // 
-            this.PlayerName.Location = new System.Drawing.Point(1933, 146);
-            this.PlayerName.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.PlayerName.Name = "PlayerName";
-            this.PlayerName.Size = new System.Drawing.Size(380, 31);
-            this.PlayerName.TabIndex = 28;
+            this.InvitePlayer.UseVisualStyleBackColor = false;
+            this.InvitePlayer.Click += new System.EventHandler(this.InvitePlayer_Click);
             // 
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(1057, 329);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView2.Location = new System.Drawing.Point(1056, 329);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 82;
@@ -255,13 +263,45 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.button1.Location = new System.Drawing.Point(1404, 954);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(224, 51);
+            this.button1.Size = new System.Drawing.Size(224, 52);
             this.button1.TabIndex = 30;
             this.button1.Text = "SEND  BOMB";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.bttn_BombSeleccionadas_Click);
+            // 
+            // Connectedlbl
+            // 
+            this.Connectedlbl.BackColor = System.Drawing.Color.Transparent;
+            this.Connectedlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Connectedlbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Connectedlbl.Location = new System.Drawing.Point(1964, 294);
+            this.Connectedlbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.Connectedlbl.Name = "Connectedlbl";
+            this.Connectedlbl.Size = new System.Drawing.Size(388, 444);
+            this.Connectedlbl.TabIndex = 31;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(1964, 261);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(388, 48);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "CONNECTED PLAYERS";
+            // 
+            // PlayerName
+            // 
+            this.PlayerName.Location = new System.Drawing.Point(1939, 161);
+            this.PlayerName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.PlayerName.Name = "PlayerName";
+            this.PlayerName.Size = new System.Drawing.Size(380, 31);
+            this.PlayerName.TabIndex = 33;
+            this.PlayerName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Form1
             // 
@@ -269,10 +309,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(2565, 1481);
+            this.ClientSize = new System.Drawing.Size(2445, 1521);
+            this.Controls.Add(this.PlayerName);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Connectedlbl);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.PlayerName);
             this.Controls.Add(this.InvitePlayer);
             this.Controls.Add(this.CreateGame);
             this.Controls.Add(this.ChatBox);
@@ -280,7 +322,6 @@
             this.Controls.Add(this.sendMessage);
             this.Controls.Add(this.bttn_CeldasSeleccionadas);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.LIST_PLAYERS);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.passwordbox);
             this.Controls.Add(this.label4);
@@ -292,6 +333,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
@@ -308,7 +350,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox passwordbox;
-        private System.Windows.Forms.Button LIST_PLAYERS;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button bttn_CeldasSeleccionadas;
 		private System.Windows.Forms.ListBox ChatBox;
@@ -316,9 +357,11 @@
 		private System.Windows.Forms.Button sendMessage;
 		private System.Windows.Forms.Button CreateGame;
 		private System.Windows.Forms.Button InvitePlayer;
-		private System.Windows.Forms.TextBox PlayerName;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Label Connectedlbl;
+		private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox PlayerName;
     }
 }
 
