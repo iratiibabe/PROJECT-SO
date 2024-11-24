@@ -8,7 +8,7 @@
 #include <mysql.h>
 #include <pthread.h> //para manejar los threads
 
-#define PORT 9200 // port from which we will listen
+#define PORT 50067 // port from which we will listen
 #define MAX_CLIENTS 20 // maximum nuber of pending petitions
 
 struct thread_data {
@@ -41,17 +41,12 @@ void login_user(char* username, char* password, char* response, MYSQL* conn);
 void create_game(char* username, char* response, MYSQL* conn);
 void select_cells(char* username,char* response,float position,MYSQL* conn); 
 void select_bomb_cells(char* username, char* response, float position_bomb, MYSQL* conn);
+int send_message_to_user(char* sender_username, char* receiver_username, char* message);
+int invitation_response(char* sender_username, char* receiver_username, char*message, MYSQL* conn, int ID_Match);
 
 //FUNCTION TO ADD PLAYER TO THE CONNECTED LIST
 void add_player(char* username) {
 	pthread_mutex_lock(&mutex);
-	
-	for(int i=0; i < player_count; i++){
-		if(strcmp(connected_players[i], username)==0){
-			pthread_mutex_unlock(&mutex);
-			return;
-		}
-	}
 	if (player_count < MAX_CLIENTS) {
 		strcpy(connected_players[player_count], username);
 		player_count++;
@@ -131,12 +126,52 @@ int send_message_to_user(char* sender_username, char* receiver_username, char* m
 		return -1;
 	}
 	return 0;
+
 }
 
 //FUNCTION TO NOTIFY THAT ANOTHER USER HAS ACCEPT YOUR INVITATION
-int invitation_response(char* sender_username, char* receiver_username, char*message) {
+int invitation_response(char* sender_username, char* receiver_username, char*message, MYSQL* conn, int ID_Match) {
 	int sender_sock = -1;
 	int receiver_sock = -1;
+	MYSQL_RES* resultado;
+	MYSQL_ROW row;
+	
+	char ID_Player2[20];
+	
+	char query[512];
+	
+	// Obtener el ID del jugador (quien envió la bomba)
+	snprintf(query, sizeof(query),
+			 "SELECT ID FROM PLAYERS WHERE USERNAME = '%s';", sender_username);
+	if (mysql_query(conn, query) != 0) {
+		snprintf(message, 512, "13/Error verifying user: %u %s\n",
+				 mysql_errno(conn), mysql_error(conn));
+		return;
+	}
+	resultado = mysql_store_result(conn);
+	if (resultado == NULL) {
+		snprintf(message, 512, "13/Error storing result: %u %s\n",
+				 mysql_errno(conn), mysql_error(conn));
+		return;
+	}
+	row = mysql_fetch_row(resultado);
+	if (row != NULL) {
+		strcpy(ID_Player2, row[0]); 
+	} else {
+		snprintf(message, 512, "13/Error: User not found\n");
+		mysql_free_result(resultado);
+		return;
+	}
+	mysql_free_result(resultado);
+	
+	snprintf(query, sizeof(query),
+			 "INSERT INTO PARTICIPATION (ID_PLAYER, ID_MATCH) VALUES ('%s', '%d');", ID_Player2, ID_Match);
+	if (mysql_query(conn, query) == 0) {
+		printf("Inserted correctly\n");
+	} else {
+		snprintf(message, 512, "13/Error registering: %u %s\n",
+				 mysql_errno(conn), mysql_error(conn));
+	}
 	
 	pthread_mutex_lock(&mutex);
 	// search socket from each user
@@ -163,6 +198,7 @@ int invitation_response(char* sender_username, char* receiver_username, char*mes
 		perror("Error sending message");
 		return -1;
 	}
+	
 	return 0;
 }	
 
@@ -320,10 +356,10 @@ void process_request(char* request, char* response, MYSQL* conn, char* username,
 			IDpartida = atoi(p);
 			
 			// create the invitation  message
-			char invitation_message[256];
-			snprintf(invitation_message, sizeof(invitation_message), "12/The player:%s: has invited you to play/%d", sender_username, IDpartida);
+		
+			sprintf(response, "12/The player :%s: has invited you :%s: to play(ID_MATCH):%d", sender_username,receiver_username, IDpartida);
 			// we use the function to send messages to other users
-			int result = send_message_to_user(sender_username, receiver_username, invitation_message);
+			int result = send_message_to_user(sender_username, receiver_username, response);
 			if (result == -1) {
 				printf("Failed to send game invite from %s to %s.\n", sender_username, receiver_username);
 			} else {
@@ -336,6 +372,7 @@ void process_request(char* request, char* response, MYSQL* conn, char* username,
 			char sender_username[20];
 			char receiver_username[20];
 			int response_code;
+			int ID_Match;
 			p = strtok(NULL, "/");
 			if (p == NULL) {
 				strcpy(response, "13/Invalid format\n");
@@ -346,16 +383,16 @@ void process_request(char* request, char* response, MYSQL* conn, char* username,
 			strcpy(receiver_username,p);
 			p = strtok(NULL, "/");
 			response_code = atoi(p);
+			p = strtok(NULL, "/");
+			ID_Match= atoi(p);
 			
-			char response_message[256];
-
 			if (response_code == 0) { 
-				snprintf(response_message, sizeof(response_message), "13/The user %s has accepted your invitation.", sender_username); 
+				sprintf(response, "13/The user %s has accepted your invitation.", sender_username); 
 			} else if (response_code == 1) { 
-				snprintf(response_message, sizeof(response_message), "13/The user %s has rejected your invitation.", sender_username); 
+				sprintf(response, "13/The user %s has rejected your invitation.", sender_username); 
 			}
 			
-			int result = invitation_response(sender_username, receiver_username, response_message); 
+			int result = invitation_response(sender_username, receiver_username, response,conn,ID_Match); 
 			
 			if (result == -1) {
 				printf("Failed to send the response from %s.\n", sender_username);
@@ -371,10 +408,10 @@ void process_request(char* request, char* response, MYSQL* conn, char* username,
 			if (p != NULL) {
 				remove_player(p);
 				get_connected_players(sender_sock);
-				strcpy(response, "End of connection\n");
+				strcpy(response, "0/End of connection\n");
 			}
 			else {
-				strcpy(response, "Player not specified for disconecction\n");
+				strcpy(response, "0/Player not specified for disconecction\n");
 			}
 			
             break;
@@ -540,13 +577,13 @@ void login_user(char* username, char* password, char* response, MYSQL* conn) {
     mysql_query(conn, query);
     resultado = mysql_store_result(conn);
 
-    if (mysql_num_rows(resultado) == 1){
+    if (mysql_num_rows(resultado) == 1) {
         strcpy(response, "6/Logged in successfully.\n");
 		add_player(username);
 		printf("%s logged in and added to the list\n", username);
 		}
     else {
-        strcpy(response, "Incorrect username or password\n");
+        strcpy(response, "6/Incorrect username or password\n");
     }
     mysql_free_result(resultado);
 }
@@ -738,7 +775,10 @@ MYSQL* init_mysql_connection() {
 		printf("Error creating the connection with MySQL: %u %s\n", mysql_errno(conn), mysql_error(conn));
 		exit(1);
 	}
-	conn = mysql_real_connect(conn, "localhost", "root", "mysql", "EXPLODINGROCKETS", 0, NULL, 0);
+	
+	conn = mysql_real_connect(conn,"shiva2.upc.es", "root", "mysql", "T4_EXPLODINGROCKETS", 0, NULL, 0);
+	//conn = mysql_real_connect(conn, "localhost", "root", "mysql", "EXPLODINGROCKETS", 0, NULL, 0);
+	
 	if (conn == NULL) {
 		printf("Error initializing the connection with MySQL: %u %s\n", mysql_errno(conn), mysql_error(conn));
 		exit(1);

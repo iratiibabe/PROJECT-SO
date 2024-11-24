@@ -96,15 +96,19 @@ namespace CLIENT
                         //MessageBox.Show(respuesta);
 
 						respuesta = pieces[1];
-                        invitacionForm invitacionForm = new invitacionForm(respuesta);
-                        DialogResult result = invitacionForm.ShowDialog();
-                        string username = usernamebox.Text;
-
+                        
 						string[] parts = pieces[1].Split(':');
-                        string sender_username = parts[1];
-                        string receiver = sender_username;
+						string receiver = parts[1];
+						string username = parts[3];
+						int ID_Match = Convert.ToInt32(parts[5]);
 
-                        RespondToInvitation(result,username,receiver);
+						if (usernamebox.Text == username)
+						{
+							invitacionForm invitacionForm = new invitacionForm(respuesta);
+							DialogResult result = invitacionForm.ShowDialog();
+							RespondToInvitation(result, username, receiver, ID_Match);
+						}
+						
                         break;
 
                     case 13: //RESPUESTA A LA INVITACIÓN
@@ -172,9 +176,9 @@ namespace CLIENT
 
 		private void connectbtn_Click(object sender, EventArgs e)
 		{
-			IPAddress direc = IPAddress.Parse("192.168.56.101");
-			IPEndPoint ipep = new IPEndPoint(direc, 9200);
-			server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            IPAddress direc = IPAddress.Parse("10.4.119.5");
+            IPEndPoint ipep = new IPEndPoint(direc, 50067);
+            server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 			try
 			{
 				server.Connect(ipep);
@@ -526,8 +530,9 @@ namespace CLIENT
             server.Send(msg);
         }
 
-        private void RespondToInvitation(DialogResult result, string username, string receiver)
+        private void RespondToInvitation(DialogResult result,string username,string receiver,int ID_Match)
 		{
+			
 			int responseCode = 0;
             if (string.IsNullOrEmpty(receiver))
             {
@@ -547,7 +552,7 @@ namespace CLIENT
 			}
             
 			// Petición: 13/sender_username/reciver_username/responseCode
-			string query = "13/" + username + "/" + receiver + "/" + responseCode;
+			string query = "13/" + username + "/" + receiver + "/" + responseCode+"/"+ ID_Match;
             byte[] msg = System.Text.Encoding.ASCII.GetBytes(query);
             server.Send(msg);
         }
