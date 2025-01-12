@@ -17,109 +17,59 @@ namespace CLIENT
 {
 	public partial class Form1 : Form
 	{
-        Socket server;
-		Thread attend;
-        public Form1()
+
+		int numForm;
+		Socket server;
+		string username;
+        int currentMatchID;
+
+
+        delegate void DelegateToWrite (string mensaje);
+        public Form1(int numForm, Socket server, string userename, int currentMatchID)
 		{
 			InitializeComponent();
-			CheckForIllegalCrossThreadCalls = false;
+			this.numForm = numForm;
+			this.server = server;
+			this.username = userename;
+            this.currentMatchID=currentMatchID;
+            CheckForIllegalCrossThreadCalls = false;
+
+            CheckForIllegalCrossThreadCalls = false;
             this.Load += new System.EventHandler(this.Form1_Load);
             dataGridView1.CellPainting += dataGridView1_CellPainting;
 			dataGridView2.CellPainting += dataGridView2_CellPainting;
 			this.BackgroundImage = Image.FromFile("..\\..\\images\\tierra.jpg");
 			this.BackgroundImageLayout = ImageLayout.Stretch;
 
-		}
+            UpdateMatchIDLabel();
+        }
+
+        private void UpdateMatchIDLabel()
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke(new Action(UpdateMatchIDLabel));
+            }
+            else
+            {
+                IDLBL.Text = currentMatchID.ToString();
+            }
+        }
+        public void UpdateMatchID(int newMatchID)
+        {
+            currentMatchID = newMatchID;
+            UpdateMatchIDLabel();
+        }
 
         private void Form1_Load(object sender, EventArgs e)
 		{
 			ConfigDataGridView1();
 			ConfigDataGridView2();
 		}
+        
 
-		private void ServerServe()
-		{
-			while (true)
-			{
-				byte[] msg2 = new byte[80];
-				server.Receive(msg2);
-				string [] pieces = Encoding.ASCII.GetString(msg2).Split('/');
-				int code =Convert.ToInt32(pieces[0]); 
-				
-				string respuesta;
-				switch (code)
-				{
-					case 5: //PETICIÓN 5 REGISTER
-						respuesta = pieces[1].Split('\0')[0];
-						MessageBox.Show(respuesta);
-						break;
-					case 6: //PETICIÓN 6 LOG IN
-						respuesta = pieces[1].Split('\0')[0];
-						MessageBox.Show(respuesta);
-						break;
-					case 7: //LISTA PLAYERS
-						respuesta = pieces[1].Split('\0')[0];
-						Connectedlbl.Text = respuesta;
-						break;
-					case 8: // CELDAS
-						respuesta = pieces[1].Split('\0')[0];
-						MessageBox.Show(respuesta);
-						break; 
-					case 9: //CHAT 
-						respuesta = pieces[1].Split('\0')[0];
-						ChatBox.Items.Add(respuesta);
-						MessageChatBox.Clear();
-						break;
-					case 10:
-						respuesta = pieces[1].Split('\0')[0];
-                        MessageBox.Show(respuesta);
-                        string[] GetID = pieces[1].Split(':');
-                        currentMatchID = Convert.ToInt32(GetID[1]);
-						break;
-					case 11:
-						respuesta = pieces[1];
-						string[] positionParts = pieces[2].Split('.'); 
 
-						if (positionParts.Length == 2) // Asegurarse de que tenemos ambas partes
-						{
-							int positionX = Convert.ToInt32(positionParts[0]);
-							int positionY = (Convert.ToInt32(positionParts[1]) / 100000);
-
-							MessageBox.Show($"Respuesta: {respuesta}\nPosición X: {positionX}\nPosición Y: {positionY}");
-
-							// Llamar a la función pintar con las coordenadas
-							pintar(respuesta, positionX, positionY);
-						}
-						break;
-                    case 12: //INVITACIÓN
-                        //respuesta = pieces[1].Split('\0')[0];
-                        //MessageBox.Show(respuesta);
-
-						respuesta = pieces[1];
-                        
-						string[] parts = pieces[1].Split(':');
-						string receiver = parts[1];
-						string username = parts[3];
-						int ID_Match = Convert.ToInt32(parts[5]);
-
-						if (usernamebox.Text == username)
-						{
-							invitacionForm invitacionForm = new invitacionForm(respuesta);
-							DialogResult result = invitacionForm.ShowDialog();
-							RespondToInvitation(result, username, receiver, ID_Match);
-						}
-						
-                        break;
-
-                    case 13: //RESPUESTA A LA INVITACIÓN
-                        respuesta = pieces[1].Split('\0')[0];
-                        MessageBox.Show(respuesta);
-                        break;
-                }
-			}
-		}
-
-        void pintar(string respuesta, int positionX, int positionY)
+        public void pintar(string respuesta, int positionX, int positionY)
 		{
 			int targetColumn = positionY;
 			int targetRow = positionX;
@@ -168,106 +118,7 @@ namespace CLIENT
 			}
 		}
 
-
-
-
-
-
-
-		private void connectbtn_Click(object sender, EventArgs e)
-		{
-            IPAddress direc = IPAddress.Parse("10.4.119.5");
-            IPEndPoint ipep = new IPEndPoint(direc, 50067);
-            server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-			try
-			{
-				server.Connect(ipep);
-				connectbtn.BackColor = Color.LightGreen;
-                disconnectbtn.BackColor = Color.LightGray;
-                MessageBox.Show("Connected");
-
-			}
-			catch (SocketException ex)
-			{
-				MessageBox.Show("I couldn't connect with the server");
-				return;
-			}
-			ThreadStart ts = delegate { ServerServe(); };
-			attend = new Thread(ts);
-			attend.Start();
-			
-		}
-
-		private void disconnectbtn_Click(object sender, EventArgs e)
-		{
-			string query = "0/" + usernamebox.Text;
-			byte[] msg = System.Text.Encoding.ASCII.GetBytes(query);
-			server.Send(msg);
-
-			
-            disconnectbtn.BackColor = Color.Red;
-            connectbtn.BackColor = Color.LightGray;
-            server.Shutdown(SocketShutdown.Both);
-			server.Close();
-			attend.Abort();
-		}
-
-		private void RegisterButton_Click(object sender, EventArgs e)
-		{
-			if (server == null || !server.Connected)
-			{
-				MessageBox.Show("Connect to server first, please");
-				return;
-			}
-			string username = usernamebox.Text;
-			string password = passwordbox.Text;
-
-			if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-			{
-				MessageBox.Show("Complete all fields, please");
-				return;
-			}
-			else
-			{
-				// Petición: 5/username/password
-				string query = "5/" + username + "/" + password;
-				byte[] msg = System.Text.Encoding.ASCII.GetBytes(query);
-				server.Send(msg);				
-			}
-		}
-
-		private void LoginButton_Click(object sender, EventArgs e)
-		{
-			if (server == null || !server.Connected)
-			{
-				MessageBox.Show("Connect to server first, please");
-				return;
-			}
-
-			string username = usernamebox.Text;
-			string password = passwordbox.Text;
-
-			if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-			{
-				MessageBox.Show("Complete all fields, please");
-				return;
-			}
-
-			// Petición: 6/username/password
-			string query = "6/" + username + "/" + password;
-			byte[] msg = System.Text.Encoding.ASCII.GetBytes(query);
-			server.Send(msg);
-		}
-
-		private void LIST_PLAYERS_Click(object sender, EventArgs e)
-		{
-			// Petición: 7
-			string query = "7/";
-			byte[] msg = System.Text.Encoding.ASCII.GetBytes(query);
-			server.Send(msg);
-		}
-
-		private void ConfigDataGridView2()
+        public void ConfigDataGridView2()
         {
             dataGridView2.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
             dataGridView2.BackgroundColor = Color.White;
@@ -299,7 +150,7 @@ namespace CLIENT
             dataGridView2.Height = (cellSize * 10) + dataGridView2.ColumnHeadersHeight + 2;
         }
 
-        private void ConfigDataGridView1()
+        public void ConfigDataGridView1()
         {
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
             dataGridView1.BackgroundColor = Color.White;
@@ -331,15 +182,13 @@ namespace CLIENT
             dataGridView1.Height = (cellSize * 10) + dataGridView1.ColumnHeadersHeight + 2; 
         }
 
-        private void SendSelectedCells_Click(object sender, EventArgs e)
+        public void SendSelectedCells_Click(object sender, EventArgs e)
         {
             if (server == null || !server.Connected)
             {
                 MessageBox.Show("Connect to server first, please");
                 return;
             }
-
-			string username = usernamebox.Text;
 
             List<string> ListSelectedCells = new List<string>();
 
@@ -354,14 +203,14 @@ namespace CLIENT
                     break;
             }
 
-            string query = $"8/{username}/" + string.Join("/", ListSelectedCells);
+            string query = $"8/{numForm}/{username}/" + IDLBL.Text + "/" + string.Join("/", ListSelectedCells);
             byte[] msg = System.Text.Encoding.ASCII.GetBytes(query);
             server.Send(msg);
 
             ListSelectedCells.Clear();
         }
 
-        private void SendBombCells_Click(object sender, EventArgs e)
+        public void SendBombCells_Click(object sender, EventArgs e)
         {
             if (server == null || !server.Connected)
             {
@@ -369,7 +218,6 @@ namespace CLIENT
                 return;
             }
 
-            string username = usernamebox.Text;
 
             List<string> ListSelectedCells = new List<string>();
 
@@ -382,15 +230,14 @@ namespace CLIENT
                 if (ListSelectedCells.Count == 1)
                     break;
             }
-
-            string query = $"11/{username}/" + string.Join("/", ListSelectedCells);
+            string query = $"11/{numForm}/{username}/" + IDLBL.Text + "/"+ string.Join("/", ListSelectedCells);
             byte[] msg = System.Text.Encoding.ASCII.GetBytes(query);
             server.Send(msg);
 
             ListSelectedCells.Clear();
         }
 
-        private void bttn_CeldasSeleccionadas_Click(object sender, EventArgs e)
+        public void bttn_CeldasSeleccionadas_Click(object sender, EventArgs e)
         {
             SendSelectedCells_Click(sender, e);
 
@@ -412,12 +259,12 @@ namespace CLIENT
             }
         }
 
-        private void bttn_BombSeleccionadas_Click(object sender, EventArgs e)
+        public void bttn_BombSeleccionadas_Click(object sender, EventArgs e)
         {
             SendBombCells_Click(sender, e);
         }
 
-        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        public void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
@@ -431,7 +278,7 @@ namespace CLIENT
             }
         }
 
-        private void dataGridView2_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        public void dataGridView2_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
@@ -446,124 +293,76 @@ namespace CLIENT
         }
 
 
-        private void sendMessage_Click(object sender, EventArgs e)
+        public void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e) //VER QUIEN ESTA CONECTADO
 		{
-			string password = passwordbox.Text;
-			string username = usernamebox.Text;
+			string query = "7/"+ numForm +"/";
+			byte[] msg = System.Text.Encoding.ASCII.GetBytes(query);
+			server.Send(msg);
+		}
+
+        public void sendMessage_Click(object sender, EventArgs e)
+		{
+			
+
 			string chat_message = MessageChatBox.Text;
-			if (server == null || !server.Connected)
-			{
-				MessageBox.Show("Connect to server first, please");
-				return;
-			}
-			if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-			{
-				MessageBox.Show("Complete all fields, please");
-				return;
-			}
-			if(string.IsNullOrEmpty(chat_message))
-			{
-				MessageBox.Show("Write something, please");
-				return;
-			}
+			
 
 			// Petición: 9/username/message
-			string query = "9/" + username + "/" + chat_message;
+			string query = "9/" + numForm + "/" + username + "/" + chat_message + "/" + IDLBL.Text;
 			byte[] msg = System.Text.Encoding.ASCII.GetBytes(query);
 			server.Send(msg);
 
-			
+
+		}
+        public void PonChat (string chat)
+		{
+			ChatBox.Items.Add(chat);
+			MessageChatBox.Clear();
+		}
+		public void PonDataGrid(string username, int rockets)
+		{
+			bool userFound = false;
+
+			foreach (DataGridViewRow row in datagridRockets.Rows)
+			{
+				if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == username)
+				{
+					row.Cells[1].Value = rockets;
+					userFound = true;
+					break;
+				}
+			}
+
+			if (!userFound)
+			{
+				datagridRockets.Rows.Add(username, rockets);
+			}
 		}
 
-		private static int ID_match = 1;
-        private int currentMatchID = -1;
-
-        private void CreateGame_Click(object sender, EventArgs e)
-		{
-			if (server == null || !server.Connected)
-			{
-				MessageBox.Show("Connect to server first, please");
-				return;
-			}
-			if (string.IsNullOrEmpty(usernamebox.Text) || string.IsNullOrEmpty(passwordbox.Text))
-			{
-				MessageBox.Show("Complete all fields, please");
-				return;
-			}
-			string query = "10/" + usernamebox.Text + "/" + ID_match;
-			byte[] msg = System.Text.Encoding.ASCII.GetBytes(query);
-			server.Send(msg);
+		public void ShowRespuesta(string respuesta)
+        {
+            MessageBox.Show(respuesta);
         }
 
-		private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e) //VER QUIEN ESTA CONECTADO
+        public void Form1_Load_1(object sender, EventArgs e)
+        {
+            LBLnumForm.Text = numForm.ToString();
+            IDLBL.Text = currentMatchID.ToString();
+        }
+
+		private void ChatBox_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			string query = "7/";
-			byte[] msg = System.Text.Encoding.ASCII.GetBytes(query);
-			server.Send(msg);
+
 		}
 
-        private void InvitePlayer_Click(object sender, EventArgs e)
-        {
-
-            string password = passwordbox.Text;
-            string username = usernamebox.Text;
-            string receiver = PlayerName.Text;
-            if (server == null || !server.Connected)
-            {
-                MessageBox.Show("Connect to server first, please");
-                return;
-            }
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-            {
-                MessageBox.Show("Complete all fields, please");
-                return;
-            }
-            if (string.IsNullOrEmpty(receiver))
-            {
-                MessageBox.Show("Write the name of the user you want to invite, please.");
-                return;
-            }
-
-            // Petition: 12/sender_username/receiver_username/IDmatch
-            string query = "12/" + username + "/" + receiver + "/" + currentMatchID;
-            byte[] msg = System.Text.Encoding.ASCII.GetBytes(query);
-            server.Send(msg);
-        }
-
-        private void RespondToInvitation(DialogResult result,string username,string receiver,int ID_Match)
+		private void LBLnumForm_Click(object sender, EventArgs e)
 		{
-			
-			int responseCode = 0;
-            if (string.IsNullOrEmpty(receiver))
-            {
-                MessageBox.Show("Receiver name is missing.");
-                return;
-            }
 
-            if (result == DialogResult.Yes) // Ha aceptado jugar
-			{
-				//MessageBox.Show("Player:" + invitation_receiver + "has accepted your invitation.");
-				responseCode = 0;
-			}
-			else if (result == DialogResult.No) // NO ha aceptado jugar
-			{
-				//MessageBox.Show("Player:" + invitation_receiver + "has rejected your invitation.");
-				responseCode = 1;
-			}
-            
-			// Petición: 13/sender_username/reciver_username/responseCode
-			string query = "13/" + username + "/" + receiver + "/" + responseCode+"/"+ ID_Match;
-            byte[] msg = System.Text.Encoding.ASCII.GetBytes(query);
-            server.Send(msg);
-        }
-        private void Form1_Load_1(object sender, EventArgs e)
-        {
+		}
 
-        }
+		private void dataGridView3_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+		{
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-    }
+		}
+	}
 }

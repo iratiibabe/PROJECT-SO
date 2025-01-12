@@ -37,29 +37,34 @@
             // 
             this.lblMensajeInvitacion.AutoSize = true;
             this.lblMensajeInvitacion.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblMensajeInvitacion.Location = new System.Drawing.Point(211, 43);
+            this.lblMensajeInvitacion.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensajeInvitacion.Location = new System.Drawing.Point(148, 28);
             this.lblMensajeInvitacion.Name = "lblMensajeInvitacion";
-            this.lblMensajeInvitacion.Size = new System.Drawing.Size(0, 30);
+            this.lblMensajeInvitacion.Size = new System.Drawing.Size(0, 29);
             this.lblMensajeInvitacion.TabIndex = 0;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(69, 109);
+            this.btnAceptar.BackColor = System.Drawing.Color.Honeydew;
+            this.btnAceptar.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.Location = new System.Drawing.Point(153, 103);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(127, 48);
             this.btnAceptar.TabIndex = 1;
             this.btnAceptar.Text = "Accept";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnDenegar
             // 
-            this.btnDenegar.Location = new System.Drawing.Point(266, 109);
+            this.btnDenegar.BackColor = System.Drawing.Color.MistyRose;
+            this.btnDenegar.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDenegar.Location = new System.Drawing.Point(350, 103);
             this.btnDenegar.Name = "btnDenegar";
             this.btnDenegar.Size = new System.Drawing.Size(127, 48);
             this.btnDenegar.TabIndex = 2;
             this.btnDenegar.Text = "Deny";
-            this.btnDenegar.UseVisualStyleBackColor = true;
+            this.btnDenegar.UseVisualStyleBackColor = false;
             this.btnDenegar.Click += new System.EventHandler(this.btnDenegar_Click);
             // 
             // invitacionForm
@@ -67,7 +72,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(481, 184);
+            this.ClientSize = new System.Drawing.Size(892, 184);
             this.Controls.Add(this.btnDenegar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblMensajeInvitacion);

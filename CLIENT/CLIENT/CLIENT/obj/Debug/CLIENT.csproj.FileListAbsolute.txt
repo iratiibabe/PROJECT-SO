@@ -285,3 +285,133 @@ C:\Users\emarq\OneDrive\Escritorio\v4 - 1\v4 - 1\v4\v4\CLIENT\CLIENT\CLIENT\obj\
 C:\Users\emarq\OneDrive\Escritorio\v4 - 1\v4 - 1\v4\v4\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
 C:\Users\emarq\OneDrive\Escritorio\v4 - 1\v4 - 1\v4\v4\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
 C:\Users\emarq\OneDrive\Escritorio\v4 - 1\v4 - 1\v4\v4\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v4 (2)\v4\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v4 (2)\v4\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v4 (2)\v4\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v4 (2)\v4\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.AssemblyReference.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v4 (2)\v4\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v4 (2)\v4\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.invitacionForm.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v4 (2)\v4\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v4 (2)\v4\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v4 (2)\v4\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v4 (2)\v4\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v4 (2)\v4\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v5\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v5\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v5\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v5\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.AssemblyReference.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v5\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v5\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.invitacionForm.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v5\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v5\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v5\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v5\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v5\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v6\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v6\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.AssemblyReference.cache
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v6\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v6\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.invitacionForm.resources
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v6\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v6\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v6\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v6\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v6\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.registrar.resources
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v6\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v6\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+C:\Users\salle\Desktop\3A\sistemes operatius\PROYECTO\v6\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v6\v6\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v6\v6\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v6\v6\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v6\v6\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.AssemblyReference.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v6\v6\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v6\v6\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.invitacionForm.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v6\v6\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v6\v6\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.registrar.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v6\v6\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v6\v6\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v6\v6\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v6\v6\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
+C:\Users\salle\Desktop\v7\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+C:\Users\salle\Desktop\v7\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+C:\Users\salle\Desktop\v7\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+C:\Users\salle\Desktop\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.AssemblyReference.cache
+C:\Users\salle\Desktop\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+C:\Users\salle\Desktop\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.invitacionForm.resources
+C:\Users\salle\Desktop\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+C:\Users\salle\Desktop\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.registrar.resources
+C:\Users\salle\Desktop\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+C:\Users\salle\Desktop\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+C:\Users\salle\Desktop\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+C:\Users\salle\Desktop\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\v7\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\v7\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\v7\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.AssemblyReference.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.invitacionForm.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.registrar.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.AssemblyReference.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.invitacionForm.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.registrar.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
+C:\SO\PROYECTO\v7\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+C:\SO\PROYECTO\v7\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+C:\SO\PROYECTO\v7\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+C:\SO\PROYECTO\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.AssemblyReference.cache
+C:\SO\PROYECTO\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+C:\SO\PROYECTO\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.invitacionForm.resources
+C:\SO\PROYECTO\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+C:\SO\PROYECTO\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.registrar.resources
+C:\SO\PROYECTO\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+C:\SO\PROYECTO\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+C:\SO\PROYECTO\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+C:\SO\PROYECTO\v7\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
+C:\Users\salle\Desktop\v8\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+C:\Users\salle\Desktop\v8\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+C:\Users\salle\Desktop\v8\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+C:\Users\salle\Desktop\v8\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.AssemblyReference.cache
+C:\Users\salle\Desktop\v8\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+C:\Users\salle\Desktop\v8\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.invitacionForm.resources
+C:\Users\salle\Desktop\v8\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+C:\Users\salle\Desktop\v8\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.registrar.resources
+C:\Users\salle\Desktop\v8\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+C:\Users\salle\Desktop\v8\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+C:\Users\salle\Desktop\v8\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+C:\Users\salle\Desktop\v8\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
+C:\Users\salle\Desktop\v9\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+C:\Users\salle\Desktop\v9\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+C:\Users\salle\Desktop\v9\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+C:\Users\salle\Desktop\v9\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.AssemblyReference.cache
+C:\Users\salle\Desktop\v9\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+C:\Users\salle\Desktop\v9\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.invitacionForm.resources
+C:\Users\salle\Desktop\v9\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+C:\Users\salle\Desktop\v9\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.registrar.resources
+C:\Users\salle\Desktop\v9\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+C:\Users\salle\Desktop\v9\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+C:\Users\salle\Desktop\v9\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+C:\Users\salle\Desktop\v9\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v9\v9\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe.config
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v9\v9\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.exe
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v9\v9\CLIENT\CLIENT\CLIENT\bin\Debug\CLIENT.pdb
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v9\v9\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.AssemblyReference.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v9\v9\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Form1.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v9\v9\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.invitacionForm.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v9\v9\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.Properties.Resources.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v9\v9\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.registrar.resources
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v9\v9\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.GenerateResource.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v9\v9\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.csproj.CoreCompileInputs.cache
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v9\v9\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.exe
+C:\PRIMER_CUATRI_2024_2025\SO\PROJECT\v9\v9\CLIENT\CLIENT\CLIENT\obj\Debug\CLIENT.pdb
